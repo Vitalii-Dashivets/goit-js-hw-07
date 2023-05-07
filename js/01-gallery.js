@@ -29,8 +29,7 @@ function openModal(event) {
     }
     
     const currentImageBig = event.target.dataset.source;
-    console.log(currentImageBig);
-    
+        
     const instance = basicLightbox.create(`
     <div class="modal">
         <img src="${currentImageBig}">
