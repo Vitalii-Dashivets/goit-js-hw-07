@@ -18,20 +18,17 @@ const itemsPreviewMarkup = galleryItems.map(item =>
 
 const galleryBox = document.querySelector('.gallery');
 galleryBox.insertAdjacentHTML('beforeend', itemsPreviewMarkup);
-const galleryLink = document.querySelector('.gallery__link');
-galleryLink.addEventListener('click', openModal);
+
+galleryBox.addEventListener('click', openModal);
 
 function openModal(event) {
     event.preventDefault();
     
-//     if (event.target.nodeName !== "IMG") {
-//     return;
-//   }
-    // const currentImageLittle = event.target.currentSrc;
-    //  console.log(event.currentTarget);
-    // console.dir(event.currentTarget);
-    // const galleryItem=galleryItems.find(item=>item.preview===currentImageLittle)
-    const currentImageBig = event.currentTarget.href;
+     if (event.target.nodeName !== "IMG") {
+      return;
+    }
+    
+    const currentImageBig = event.target.dataset.source;
     console.log(currentImageBig);
     
     const instance = basicLightbox.create(`
