@@ -17,7 +17,7 @@ const itemsPreviewMarkup = galleryItems.map(item =>
 const optionsSet = {
     captionDelay: 250,
     captionsData: 'alt',
-    animationSpeed: 500,
+    animationSpeed: 300,
     swipeTolerance: 50,
     fadeSpeed: 500,
     scrollZoomFactor: 0.1,
