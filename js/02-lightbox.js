@@ -1,7 +1,6 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
-// console.log(galleryItems);
 
 const itemsPreviewMarkup = galleryItems.map(item =>
  `<li class="gallery__item">
@@ -20,7 +19,8 @@ const optionsSet = {
     captionsData: 'alt',
     animationSpeed: 500,
     swipeTolerance: 50,
-    fadeSpeed:500,
+    fadeSpeed: 500,
+    scrollZoomFactor: 0.1,
 }  
 
 const galleryBox = document.querySelector('.gallery');
@@ -28,11 +28,9 @@ galleryBox.insertAdjacentHTML('beforeend', itemsPreviewMarkup);
 
 
 let gallery = new SimpleLightbox('.gallery a',  optionsSet);
-// const gallery = $('.gallery').simpleLightbox();
 
 gallery.on('show.simplelightbox', function () {
     
   });
 
  
-// console.log(gallery);
