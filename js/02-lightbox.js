@@ -19,7 +19,7 @@ const optionsSet = {
     captionsData: 'alt',
     animationSpeed: 300,
     swipeTolerance: 50,
-    fadeSpeed: 500,
+    fadeSpeed: 300,
     scrollZoomFactor: 0.1,
 }  
 
