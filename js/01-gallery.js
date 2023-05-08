@@ -38,6 +38,16 @@ function openModal(event) {
     </div>
 `);
 
-instance.show();
+  instance.show();
 
+  
+  document.addEventListener("keydown", (event => {
+  if (event.key !== 'Escape') {
+    return;
+  }
+    instance.close();
+    document.removeEventListener("keydown",(event));
+}));
+  
 }
+
