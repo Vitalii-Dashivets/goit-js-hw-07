@@ -22,15 +22,15 @@ galleryBox.insertAdjacentHTML('beforeend', itemsPreviewMarkup);
 galleryBox.addEventListener('click', openModal);
 
 function openModal(event) {
-    event.preventDefault();
+  event.preventDefault();
     
-     if (event.target.nodeName !== "IMG") {
-      return;
-    }
+  if (event.target.nodeName !== "IMG") {
+    return;
+  }
     
-    const currentImageBig = event.target.dataset.source;
+  const currentImageBig = event.target.dataset.source;
         
-    const instance = basicLightbox.create(`
+  const instance = basicLightbox.create(`
     <div class="modal">
         <img src="${currentImageBig}">
         
@@ -40,14 +40,21 @@ function openModal(event) {
 
   instance.show();
 
+  document.addEventListener("keydown", closeEscape);
   
-  document.addEventListener("keydown", (event => {
+   function closeEscape(event) {
   if (event.key !== 'Escape') {
     return;
   }
-    instance.close();
-    document.removeEventListener("keydown",(event));
-}));
+     instance.close();
+     document.removeEventListener("keydown",closeEscape);
+   }
   
-}
+ }
 
+// function closeEscape(event) {
+//   if (event.key !== 'Escape') {
+//     return;
+//   }
+//     instance.close();
+// }
