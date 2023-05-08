@@ -9,25 +9,29 @@ const itemsPreviewMarkup = galleryItems.map(item =>
     <img
       class="gallery__image"
       src=${item.preview}
-      alt=${item.description}
+      alt='${item.description}'
     />
   </a>
 </li>`).join('');
 
 
-   
+const optionsSet = {
+    captionDelay: 250,
+    captionsData: 'alt',
+    animationSpeed: 500,
+    swipeTolerance: 50,
+    fadeSpeed:500,
+}  
 
 const galleryBox = document.querySelector('.gallery');
 galleryBox.insertAdjacentHTML('beforeend', itemsPreviewMarkup);
 
 
-var gallery = new SimpleLightbox('.gallery', { captionDelay: 250, captionsData: 'alt' });
+let gallery = new SimpleLightbox('.gallery a',  optionsSet);
 // const gallery = $('.gallery').simpleLightbox();
 
-gallery.on('show.simplelightbox', function (event) {
-    event.preventDefault();
-    console.log("click");
-  gallery.open();
+gallery.on('show.simplelightbox', function () {
+    
   });
 
  
