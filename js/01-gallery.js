@@ -39,13 +39,14 @@ function openModal(event) {
   
   instance.show();
     
-  document.addEventListener("keydown", closeEscape,{once:true});
+  document.addEventListener("keydown", closeEscape);
   
   function closeEscape(event) {
     if (event.key !== 'Escape') {
      return;
      }
-     instance.close();
+    instance.close();
+    document.removeEventListener("keydown", closeEscape);
   }
   
 }

@@ -21,7 +21,7 @@ const optionsSet = {
     swipeTolerance: 50,
     fadeSpeed: 300,
     scrollZoomFactor: 0.1,
-}  
+    }  
 
 const galleryBox = document.querySelector('.gallery');
 galleryBox.insertAdjacentHTML('beforeend', itemsPreviewMarkup);
