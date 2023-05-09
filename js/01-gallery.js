@@ -31,7 +31,7 @@ function openModal(event) {
              
   const instance = basicLightbox.create(`
     <div class="modal">
-        <img src="${event.target.dataset.source}" width=1200 height=853>
+        <img src="${event.target.dataset.source}" width=1088 height=723>
         
         </img>
     </div>
