@@ -12,49 +12,44 @@ const itemsPreviewMarkup = galleryItems.map(item =>
     />
   </a>
 </li>`).join('');
-
-
-   
+ 
 
 const galleryBox = document.querySelector('.gallery');
+
 galleryBox.insertAdjacentHTML('beforeend', itemsPreviewMarkup);
 
 galleryBox.addEventListener('click', openModal);
+ 
 
 function openModal(event) {
+
   event.preventDefault();
-    
+  
   if (event.target.nodeName !== "IMG") {
     return;
   }
-    
-  const currentImageBig = event.target.dataset.source;
-        
+             
   const instance = basicLightbox.create(`
     <div class="modal">
-        <img src="${currentImageBig}">
+        <img src="${event.target.dataset.source}" width=1200 height=853>
         
         </img>
     </div>
-`);
-
+    `);
+  
   instance.show();
-
-  document.addEventListener("keydown", closeEscape);
+    
+  document.addEventListener("keydown", closeEscape,{once:true});
   
-   function closeEscape(event) {
-  if (event.key !== 'Escape') {
-    return;
-  }
+  function closeEscape(event) {
+    if (event.key !== 'Escape') {
+     return;
+     }
      instance.close();
-     document.removeEventListener("keydown",closeEscape);
-   }
+  }
   
- }
+}
 
-// function closeEscape(event) {
-//   if (event.key !== 'Escape') {
-//     return;
-//   }
-//     instance.close();
-// }
+
+
+
