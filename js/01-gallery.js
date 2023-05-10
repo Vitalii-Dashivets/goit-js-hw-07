@@ -42,7 +42,7 @@ function openModal(event) {
   document.addEventListener("keydown", closeEscape);
   
   function closeEscape(event) {
-    if (event.key !== 'Escape') {
+    if (event.code !== 'Escape') {
      return;
      }
     instance.close();
