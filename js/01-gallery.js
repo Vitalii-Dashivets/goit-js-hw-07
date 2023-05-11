@@ -3,15 +3,15 @@ import { galleryItems } from './gallery-items.js';
 
 const itemsPreviewMarkup = galleryItems.map(item =>
     `<li class="gallery__item">
-  <a class="gallery__link" href=${item.original}>
+    <a class="gallery__link" href=${item.original}>
     <img
       class="gallery__image"
       src=${item.preview}
       data-source=${item.original}
       alt='${item.description}'
     />
-  </a>
-</li>`).join('');
+    </a>
+    </li>`).join('');
  
 
 const galleryBox = document.querySelector('.gallery');
