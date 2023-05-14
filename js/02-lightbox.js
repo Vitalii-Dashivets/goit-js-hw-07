@@ -27,10 +27,10 @@ const galleryBox = document.querySelector('.gallery');
 galleryBox.insertAdjacentHTML('beforeend', itemsPreviewMarkup);
 
 
-let gallery = new SimpleLightbox('.gallery a',  optionsSet);
+ new SimpleLightbox('.gallery a',  optionsSet);
 
-gallery.on('show.simplelightbox', function () {
+// gallery.on('show.simplelightbox', function () {
     
-  });
+  // });
 
  

@@ -35,18 +35,31 @@ function openModal(event) {
         
         </img>
     </div>
-    `);
+
+    `,
+    {
+	
+	
+      onShow: () => {
+        document.addEventListener("keydown", closeEscape);
+  },
+	
+      onClose: () => {
+         document.removeEventListener("keydown", closeEscape);
+  }
+}
+  );
   
   instance.show();
     
-  document.addEventListener("keydown", closeEscape);
+  // document.addEventListener("keydown", closeEscape);
   
   function closeEscape(event) {
     if (event.code !== 'Escape') {
      return;
      }
     instance.close();
-    document.removeEventListener("keydown", closeEscape);
+    // document.removeEventListener("keydown", closeEscape);
   }
   
 }
